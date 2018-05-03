@@ -114,7 +114,6 @@ class TicTacToe
       puts "Congratulations #{winner(@board)}!"
     else draw?
       puts "Cat's Game!"
-    counter = 0
     end
   end
 
