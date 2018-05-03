@@ -80,16 +80,13 @@ class TicTacToe
     end
   end
 
-
   def draw?
     (!won?(@board) && full?(@board))
   end
 
-
   def over?
     (won?(@board) || draw?(@board))
   end
-
 
   def winner
     if WIN_COMBINATIONS.detect do |winc|
@@ -123,7 +120,5 @@ class TicTacToe
       counter += 1
     end
   end
-
-
 
 end
