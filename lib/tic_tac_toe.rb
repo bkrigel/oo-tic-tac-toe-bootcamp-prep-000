@@ -115,9 +115,6 @@ class TicTacToe
     else draw?(@board)
       puts "Cat's Game!"
     counter = 0
-    until counter == 9
-      turn(@board)
-      counter += 1
     end
   end
 
