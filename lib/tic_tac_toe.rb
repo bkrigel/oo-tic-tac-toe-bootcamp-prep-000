@@ -66,6 +66,13 @@ class TicTacToe
     turn_count % 2 == 0 ? "X" : "O"
   end
 
+  def won?
+    WIN_COMBINATIONS.detect do |winc|
+      @board[winc[0]] == @board[winc[1]] &&
+      @board[winc[1]] == @board[winc[2]] &&
+      (@board[winc[0]] == "X" || @board[winc[0]] == "O")
+    end
+  end
 
 
 
