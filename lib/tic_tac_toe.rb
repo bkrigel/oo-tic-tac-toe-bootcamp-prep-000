@@ -74,6 +74,41 @@ class TicTacToe
     end
   end
 
+  def full?
+    @board.all? do |fullb|
+      fullb == "X" || fullb == "O"
+    end
+  end
+
+
+  def draw?
+    (!won?(@board) && full?(@board))
+  end
+
+
+  def over?
+    (won?(@board) || draw?(@board))
+  end
+
+
+  def winner
+    if WIN_COMBINATIONS.detect do |winc|
+      @board[winc[0]] == @board[winc[1]] &&
+      @board[winc[1]] == @board[winc[2]] &&
+      @board[winc[0]] == "X"
+      end
+      "X"
+    elsif WIN_COMBINATIONS.detect do |winc|
+      @board[winc[0]] == @board[winc[1]] &&
+      @board[winc[1]] == @board[winc[2]] &&
+      @board[winc[0]] == "O"
+      end
+      "O"
+    else
+      nil
+    end
+  end
+
 
 
 
